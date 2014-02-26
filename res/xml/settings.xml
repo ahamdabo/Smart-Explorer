@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="Audio" >
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="enableaudio"
+            android:summary="set to enable audio streaming"
+            android:title="Enable Audio" >
+        </CheckBoxPreference>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Video" >
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="enablevideo"
+            android:summary="set to enable video streaming"
+            android:title="Enable Video" >
+        </CheckBoxPreference>
+    </PreferenceCategory>
+
+</PreferenceScreen> <!-- <PreferenceCategory android:title="@string/pref_update_setting" > -->
+<!-- <CheckBoxPreference -->
+<!-- android:defaultValue="false" -->
+<!-- android:key="prefSendReport" -->
+<!-- android:summary="@string/pref_send_report_summary" -->
+<!-- android:title="@string/pref_send_report" > -->
+<!-- </CheckBoxPreference> -->
+<!-- </PreferenceCategory> -->
