@@ -7,16 +7,6 @@
     android:orientation="vertical" >
 
     <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="Video streaming goes here.. "
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#FFF" />
-
-    <TextView
         android:id="@+id/tv1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -35,11 +25,19 @@
         android:layout_marginTop="18dp"
         android:text="TextView" />
 
-    <com.MobileAnarchy.Android.Widgets.Joystick.JoystickView
+    <com.iti.conqueror.mobileAnarchy.Android.Widget.JoystickView
         android:id="@+id/joystickView"
         android:layout_width="130dip"
         android:layout_height="130dip"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/up" />
 
 </RelativeLayout>

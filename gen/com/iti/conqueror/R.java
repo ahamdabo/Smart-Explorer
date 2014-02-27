@@ -224,21 +224,24 @@ containing a value of this type.
         public static final int up=0x7f02001f;
     }
     public static final class id {
-        public static final int TextViewX=0x7f060008;
-        public static final int TextViewY=0x7f060009;
-        public static final int action_settings=0x7f06000f;
+        public static final int TextViewX=0x7f06000b;
+        public static final int TextViewY=0x7f06000c;
+        public static final int action_settings=0x7f060012;
+        public static final int buttonw=0x7f060008;
+        public static final int editText1=0x7f060007;
         public static final int hybrid=0x7f060004;
-        public static final int joystickView=0x7f060007;
-        public static final int main=0x7f06000b;
-        public static final int map=0x7f06000a;
+        public static final int imageView1=0x7f060011;
+        public static final int joystickView=0x7f06000a;
+        public static final int main=0x7f06000e;
+        public static final int map=0x7f06000d;
         public static final int mapsfragment=0x7f060005;
         public static final int none=0x7f060000;
         public static final int normal=0x7f060001;
         public static final int satellite=0x7f060002;
         public static final int terrain=0x7f060003;
-        public static final int textView1=0x7f06000c;
-        public static final int tv1=0x7f06000d;
-        public static final int tv2=0x7f06000e;
+        public static final int textVieww=0x7f060009;
+        public static final int tv1=0x7f06000f;
+        public static final int tv2=0x7f060010;
         public static final int videofragment=0x7f060006;
     }
     public static final class integer {
@@ -246,9 +249,10 @@ containing a value of this type.
     }
     public static final class layout {
         public static final int activity_conqueror=0x7f030000;
-        public static final int joystick=0x7f030001;
-        public static final int maps_fragment=0x7f030002;
-        public static final int video_fragment=0x7f030003;
+        public static final int connection=0x7f030001;
+        public static final int joystick=0x7f030002;
+        public static final int maps_fragment=0x7f030003;
+        public static final int video_fragment=0x7f030004;
     }
     public static final class menu {
         public static final int conqueror=0x7f0b0000;

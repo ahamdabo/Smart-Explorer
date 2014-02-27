@@ -1,4 +1,4 @@
-package com.MobileAnarchy.Android.Widgets.Joystick;
+package com.iti.conqueror.mobileAnarchy.Android.Widget;
 
 public interface JoystickClickedListener {
 	public void OnClicked();

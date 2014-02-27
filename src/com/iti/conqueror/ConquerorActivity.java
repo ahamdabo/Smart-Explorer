@@ -23,13 +23,7 @@ public class ConquerorActivity extends FragmentActivity {
 	 * settings
 	 */
 	void showUserSettings() {
-		// PreferenceManager.setDefaultValues(this, R.xml.settings, false);
-		// SharedPreferences sharedPrefs = PreferenceManager
-		// .getDefaultSharedPreferences(this);
-		//
-		// StringBuilder builder = new StringBuilder();
-		// builder.append("\n item: " + sharedPrefs.getString("key", "NULL"));
-
+		
 	}
 
 	@Override

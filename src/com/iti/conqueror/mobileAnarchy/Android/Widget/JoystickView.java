@@ -1,4 +1,4 @@
-package com.MobileAnarchy.Android.Widgets.Joystick;
+package com.iti.conqueror.mobileAnarchy.Android.Widget;
 
 import android.content.Context;
 import android.graphics.Canvas;
