@@ -35,4 +35,11 @@
         android:layout_marginTop="18dp"
         android:text="TextView" />
 
+    <com.MobileAnarchy.Android.Widgets.Joystick.JoystickView
+        android:id="@+id/joystickView"
+        android:layout_width="130dip"
+        android:layout_height="130dip"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true" />
+
 </RelativeLayout>

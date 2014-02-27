@@ -24,7 +24,6 @@ public class MapsFragment extends Fragment {
 			Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		View v = inflater.inflate(R.layout.maps_fragment, container, false);
-
 		return v;
 	}
 
