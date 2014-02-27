@@ -23,8 +23,6 @@ public class VideoFragment extends Fragment {
 	private ImageView iv;
 	JoystickView joystick;
 
-	
-
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -35,7 +33,7 @@ public class VideoFragment extends Fragment {
 		tv2 = (TextView) v.findViewById(R.id.tv2);
 
 		joystick = (JoystickView) v.findViewById(R.id.joystickView);
-		 iv = (ImageView) v.findViewById(R.id.imageView1);
+		iv = (ImageView) v.findViewById(R.id.imageView1);
 
 		handler1 = new Handler(getActivity().getMainLooper(), new Callback() {
 
@@ -68,39 +66,35 @@ public class VideoFragment extends Fragment {
 		public void OnMoved(int pan, int tilt) {
 			tv1.setText(Integer.toString(pan));
 			tv2.setText(Integer.toString(tilt));
-			if(1 < pan && pan <= 10)
-			 {
+			if (7 < pan && pan <= 10) {
 				ConnectionActivity.sendMessage("Right");
-			 }
-			
-			if(-10 < pan && pan <= 0)
-			 {
+			}
+
+			if (-10 < pan && pan <= -7) {
 				ConnectionActivity.sendMessage("Left");
-			 }
-			
-			if(1 < tilt && tilt <= 10)
-			 {
+			}
+
+			if (7 < tilt && tilt <= 10) {
 				ConnectionActivity.sendMessage("Down");
-			 }
-			
-			if(-10 < tilt && tilt <= 0)
-			 {
+			}
+
+			if (-10 < tilt && tilt <= -7) {
 				ConnectionActivity.sendMessage("Up");
-			 }
-			
-			
+			}
+
 		}
 
 		@Override
 		public void OnReleased() {
 			tv1.setText("released");
 			tv2.setText("released");
-			ConnectionActivity.sendMessage("Stop");
 		}
 
 		public void OnReturnedToCenter() {
 			tv1.setText("stopped");
 			tv2.setText("stopped");
+			ConnectionActivity.sendMessage("Stop");
+
 		};
 	};
 
