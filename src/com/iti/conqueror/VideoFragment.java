@@ -25,9 +25,6 @@ public class VideoFragment extends Fragment {
 		tv2 = (TextView) v.findViewById(R.id.tv2);
 		joystick = (JoystickView) v.findViewById(R.id.joystickView);
 
-		// LinearLayout ll = new LinearLayout(getActivity());
-		// ll.addView(new com.iti.conqueror.util.AnalogStick(getActivity(),
-		// tv1, tv2));
 		return v;
 	}
 
