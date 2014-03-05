@@ -17,6 +17,12 @@ import com.iti.conqueror.mobileAnarchy.Android.Widget.JoystickView;
 
 public class VideoFragment extends Fragment {
 
+	/**
+	 * 
+	 * This class is responsible for displaying the video and handling the
+	 * analog control buttons..
+	 * 
+	 */
 	TextView tv1, tv2;
 
 	static Handler handler1;

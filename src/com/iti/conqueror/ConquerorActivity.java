@@ -2,17 +2,27 @@ package com.iti.conqueror;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Point;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.app.FragmentActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import com.iti.conqueror.util.SettingsActivity;
 
+/**
+ * is to be called before creating view and after any modifications to the
+ * settings
+ * 
+ */
+
 public class ConquerorActivity extends FragmentActivity {
 
 	public final int RESULT_SETTINGS = 1;
+	boolean audio, video;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -21,11 +31,31 @@ public class ConquerorActivity extends FragmentActivity {
 
 	}
 
-	/**
-	 * is to be called before creating view and after any modifications to the
-	 * settings
-	 */
 	void setUserSettings() {
+		PreferenceManager.setDefaultValues(this, R.xml.settings, false);
+		SharedPreferences sharedPrefs = PreferenceManager
+				.getDefaultSharedPreferences(this);
+		StringBuilder builder = new StringBuilder();
+
+		if (sharedPrefs.getBoolean("enablevideo", true)) {
+
+			video = true;
+			builder.append("Video-> true\n");
+
+		} else {
+			video = false;
+			builder.append("Video-> false\n");
+		}
+
+		if (sharedPrefs.getBoolean("enableaudio", true)) {
+			audio = true;
+			builder.append("audio-> true\n");
+		} else {
+			audio = false;
+			builder.append("audio-> false\n");
+		}
+
+		Log.i("Audio-Video", "Values.. " + builder.toString());
 
 	}
 
@@ -42,7 +72,6 @@ public class ConquerorActivity extends FragmentActivity {
 			setUserSettings();
 			break;
 		}
-
 	}
 
 	@Override
@@ -50,6 +79,13 @@ public class ConquerorActivity extends FragmentActivity {
 		// TODO Auto-generated method stub
 		super.onStart();
 
+	}
+
+	@Override
+	protected void onDestroy() {
+		// TODO Auto-generated method stub
+		super.onDestroy();
+		ConquerorActivity.this.finish();
 	}
 
 	@Override
