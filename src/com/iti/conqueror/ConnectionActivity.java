@@ -20,7 +20,7 @@ import android.widget.TextView;
 public class ConnectionActivity extends Activity {
 
 	private EditText serverIp;
-	private Button connectPhones;
+	private Button connectPhones, skip;
 	private static TextView Status;
 
 	public static String serverIpAddress = "";
@@ -35,13 +35,23 @@ public class ConnectionActivity extends Activity {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.connection);
-
 		serverIp = (EditText) findViewById(R.id.editText1);
 		connectPhones = (Button) findViewById(R.id.buttonw);
+		skip = (Button) findViewById(R.id.skip);
+
 		Status = (TextView) findViewById(R.id.textVieww);
 		handler = new Handler();
-
 		connectPhones.setOnClickListener(connectListener);
+		skip.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+
+				startActivity(new Intent(ConnectionActivity.this,
+						ConquerorActivity.class));
+			}
+		});
 	}
 
 	private OnClickListener connectListener = new OnClickListener() {

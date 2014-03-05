@@ -2,29 +2,55 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#111"
     android:orientation="vertical" >
 
-    <EditText
-        android:id="@+id/editText1"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Server IP" >
+        android:orientation="horizontal" >
 
-        <requestFocus />
-    </EditText>
+        <EditText
+            android:id="@+id/editText1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:ems="10"
+            android:hint="Submit server ip"
+            android:textColor="#33b5e5" >
 
-    <Button
-        android:id="@+id/buttonw"
-        android:layout_width="wrap_content"
+            <requestFocus />
+        </EditText>
+
+        <Button
+            android:id="@+id/buttonw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="connect" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="connect" />
+        android:orientation="horizontal" >
 
-    <TextView
-        android:id="@+id/textVieww"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="LogStatus"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        <TextView
+            android:id="@+id/textVieww"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:paddingLeft="4dip"
+            android:text="LogStatus"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#33b5e5" />
+
+        <Button
+            android:id="@+id/skip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.85"
+            android:text="skip" />
+    </LinearLayout>
 
 </LinearLayout>

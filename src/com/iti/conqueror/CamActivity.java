@@ -11,9 +11,8 @@ import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.util.Log;
 
-
 public class CamActivity implements Runnable {
-	
+
 	public static final int ClientPort = 1235;
 	private static String ip;
 	Bitmap bm;
@@ -113,4 +112,3 @@ public class CamActivity implements Runnable {
 
 	}
 }
-

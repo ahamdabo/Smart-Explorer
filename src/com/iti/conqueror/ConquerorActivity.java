@@ -1,6 +1,8 @@
 package com.iti.conqueror;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Point;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
@@ -16,14 +18,19 @@ public class ConquerorActivity extends FragmentActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_conqueror);
+
 	}
 
 	/**
 	 * is to be called before creating view and after any modifications to the
 	 * settings
 	 */
-	void showUserSettings() {
-		
+	void setUserSettings() {
+
+	}
+
+	void connectServer(Activity x, Point xy) {
+
 	}
 
 	@Override
@@ -32,7 +39,7 @@ public class ConquerorActivity extends FragmentActivity {
 
 		switch (requestCode) {
 		case RESULT_SETTINGS:
-			showUserSettings();
+			setUserSettings();
 			break;
 		}
 
@@ -42,8 +49,6 @@ public class ConquerorActivity extends FragmentActivity {
 	protected void onStart() {
 		// TODO Auto-generated method stub
 		super.onStart();
-
-		
 
 	}
 
@@ -62,6 +67,12 @@ public class ConquerorActivity extends FragmentActivity {
 		case R.id.action_settings:
 			Intent i = new Intent(this, SettingsActivity.class);
 			startActivityForResult(i, RESULT_SETTINGS);
+			return true;
+
+		case R.id.action_connection:
+			startActivity(new Intent(ConquerorActivity.this,
+					ConnectionActivity.class));
+
 			return true;
 
 		default:
