@@ -1,11 +1,9 @@
 package com.iti.conqueror;
 
 import android.app.Fragment;
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.Handler.Callback;
-import android.os.Message;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,17 +15,14 @@ import com.iti.conqueror.mobileAnarchy.Android.Widget.JoystickView;
 
 public class VideoFragment extends Fragment {
 
-	/**
-	 * 
-	 * This class is responsible for displaying the video and handling the
-	 * analog control buttons..
-	 * 
-	 */
 	TextView tv1, tv2;
+	public TextView tv3;
+	public static ImageView vImage;
 
-	static Handler handler1;
-	private ImageView iv;
+	Handler handler1;
 	JoystickView joystick;
+
+	ServerThread serverUI = new ServerThread(this);
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -37,22 +32,14 @@ public class VideoFragment extends Fragment {
 
 		tv1 = (TextView) v.findViewById(R.id.tv1);
 		tv2 = (TextView) v.findViewById(R.id.tv2);
-
+		tv3 = (TextView) v.findViewById(R.id.tv3);
+		vImage = (ImageView) v.findViewById(R.id.imageView1);
+		handler1 = new Handler();
 		joystick = (JoystickView) v.findViewById(R.id.joystickView);
-		iv = (ImageView) v.findViewById(R.id.imageView1);
-
-		handler1 = new Handler(getActivity().getMainLooper(), new Callback() {
-
-			@Override
-			public boolean handleMessage(Message msg) {
-				switch (msg.what) {
-				case 0:
-					iv.setImageBitmap((Bitmap) msg.obj);
-				}
-				return false;
-			}
-		});
-
+		Log.d("WahmaaaN: ", "befor tui");
+		serverUI.tUI.start();
+		serverUI.startVideo();
+		Log.d("WahmaaaN: ", "After tui");
 		return v;
 	}
 
@@ -61,7 +48,6 @@ public class VideoFragment extends Fragment {
 		// TODO Auto-generated method stub
 
 		joystick.setOnJostickMovedListener(_listener);
-		new Thread(new CamActivity(ConnectionActivity.serverIpAddress));
 		super.onStart();
 
 	}
@@ -73,19 +59,19 @@ public class VideoFragment extends Fragment {
 			tv1.setText(Integer.toString(pan));
 			tv2.setText(Integer.toString(tilt));
 			if (7 < pan && pan <= 10) {
-				ConnectionActivity.sendMessage("Right");
+				ServerThread.sendMessage("Right");
 			}
 
 			if (-10 < pan && pan <= -7) {
-				ConnectionActivity.sendMessage("Left");
+				ServerThread.sendMessage("Left");
 			}
 
 			if (7 < tilt && tilt <= 10) {
-				ConnectionActivity.sendMessage("Down");
+				ServerThread.sendMessage("Down");
 			}
 
 			if (-10 < tilt && tilt <= -7) {
-				ConnectionActivity.sendMessage("Up");
+				ServerThread.sendMessage("Up");
 			}
 
 		}
@@ -99,7 +85,7 @@ public class VideoFragment extends Fragment {
 		public void OnReturnedToCenter() {
 			tv1.setText("stopped");
 			tv2.setText("stopped");
-			ConnectionActivity.sendMessage("Stop");
+			ServerThread.sendMessage("Stop");
 
 		};
 	};
