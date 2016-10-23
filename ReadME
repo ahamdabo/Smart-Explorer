@@ -1,0 +1,5 @@
+A small explorer robot runs on Android, the robot uses the peripherals of the mobile 
+device (Camera, Bluetooth, WiFi, GPS, Accelerometer) for reporting the general atmosphere 
+and broadcasting videos from inaccessible areas.
+
+Android - IOIO - Java - WiFi - Bluetooth
